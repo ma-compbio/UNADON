@@ -80,6 +80,10 @@ def train(model, loader_train, loader_test, device, \
         reg_report(y_true_list, y_prob_list)
 
 
+        # For hyperparameter search runs, loader_test contains one leave-out 
+        # odd-numbered training chromosomes as the validation set.
+        # For final testing, loader_test contains the even-numbered test chromosomes.
+        
         # Evaluate on testing cell type
         model.eval()
 
