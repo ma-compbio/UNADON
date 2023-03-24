@@ -6,10 +6,10 @@ UNADON predicts the genome-wide cytological distance to a specific type of nucle
 ![The overall architecture of UNADON](https://github.com/ma-compbio/UNADON/blob/main/Figure%201%20.png)
 
 The major contributions of UNADON are as follows:
-(1) UNADON is a deep learning-based model to specifically predict chromatin spatial positioning relative to nuclear bodies;
-(2) The distinctive neural architecture design enables UNADON to learn the long-range dependencies more effectively;
-(3) UNADON generalizes well in the cross-cell-type predictions, which can be applied to infer spatial positioning in new cell types.
-(4) Interpretation of UNADON reveals potential mechanisms for targeting nuclear bodies.
+ -  UNADON is a deep learning-based model to specifically predict chromatin spatial positioning relative to nuclear bodies;
+ -  The distinctive neural architecture design enables UNADON to learn the long-range dependencies more effectively;
+ -  UNADON generalizes well in the cross-cell-type predictions, which can be applied to infer spatial positioning in new cell types.
+ -  Interpretation of UNADON reveals potential mechanisms for targeting nuclear bodies.
 
 # Requirements
 UNADON is developed and tested under python 3.7.10.
