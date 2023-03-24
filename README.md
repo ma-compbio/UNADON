@@ -15,22 +15,20 @@ The major contributions of UNADON are as follows:
 UNADON is developed and tested under python 3.7.10.
 List of required python packages for running UNADON:
 
-bedtools=2.30.0
-biopython=1.79
-captum=0.5.0
-h5py=3.1.0
-numpy=1.19.5
-pybedtools=0.8.2
-pybigwig=0.3.18
-scikit-learn=0.24.2
-scipy=1.7.2
-torch=1.12.1
-torch-optimizer=0.3.0
-torchvision=0.13.0
-xgboost=1.5.0
+ - bedtools=2.30.0
+ - biopython=1.79
+ - captum=0.5.0
+ - h5py=3.1.0
+ - numpy=1.19.5
+ - pybedtools=0.8.2
+ - pybigwig=0.3.18
+ - scikit-learn=0.24.2
+ - scipy=1.7.2
+ - torch=1.12.1
+ - torch-optimizer=0.3.0
+ - torchvision=0.13.0
+ - xgboost=1.5.0
 
-The required packages can be installed by the following command:
-    pip install -r requirements.txt
 
 # USAGE
 
