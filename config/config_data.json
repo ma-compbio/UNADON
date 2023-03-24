@@ -1,0 +1,16 @@
+{
+    "seq_path": "../data/sequence/hg38/", 
+    "cell_type": "K562",
+    "output_file": "../data/processed_data/hg38_cell_25kb_test.hdf5",
+    "kmer_list": [5,6],
+    "resolution": 25000,
+    "signal_path": "../data/chromatin_features/",
+    "epi_name": ["ATAC-seq","H2A.Z","H3K4me1","H3K4me2","H3K4me3", "H3K9me3","H3K27me3", "H3K27ac", "H3K36me3"],
+    "centromere_path": "../data/hg38_centromere.bed",
+    "tsa_type": ["SON", "LMNB"],
+    "tsa_scaling": {
+        "K562": {
+            "SON": [2,2],
+            "LMNB": [1.5, 1] }
+        }
+}

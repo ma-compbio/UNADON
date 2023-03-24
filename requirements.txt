@@ -1,0 +1,12 @@
+biopython==1.79
+captum==0.5.0
+h5py==3.1.0
+numpy==1.19.5
+pybedtools==0.8.2
+pybigwig==0.3.18
+scikit-learn==0.24.2
+scipy==1.7.2
+torch
+torchvision
+xgboost==1.5.0
+
