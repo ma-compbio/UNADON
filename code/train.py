@@ -183,8 +183,8 @@ def train(conf):
         print('Valid loss %.5f' % np.mean(loss_list))
 
         metric = reg_report(y_true_list, y_prob_list)
-        loss = merge_pred(y_true_list, y_prob_list, coord_list,epoch,conf['output_path'],conf['output_name'],'valid')
-        print('Valid loss after merging %.5f' % loss)
+        # loss = merge_pred(y_true_list, y_prob_list, coord_list,epoch,conf['output_path'],conf['output_name'],'valid')
+        # print('Valid loss after merging %.5f' % loss)
         
         # Used both correlation and R2 to define the best epoch
         if metric[1] > best_corr and metric[3] > best_r:

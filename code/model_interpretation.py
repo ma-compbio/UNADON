@@ -184,11 +184,20 @@ def model_interpretation(conf):
     col = []
     batch_size = 8 # Big memory usage
 
-    X = X_test
-    D = dict()
-    coord = np.array([dts_test.__getitem__(i)[-1] for i in range(len(X_test))])
+    X = []
+    coord = []
+    
+    for i in range(len(X_test)):
+        (x, y, d, c) = dts_test.__getitem__(i)
+        X.append(x.numpy())
+        coord.append(c)
+    
+    X = np.array(X)
+    coord = np.array(coord)
 
     print(len(coord), len(X))
+
+    D = dict()
 
     for id in np.unique(coord):
         D[id] = []
