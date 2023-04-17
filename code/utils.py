@@ -51,12 +51,7 @@ class SeqData(Dataset):
     def __len__(self):
         return len(self.y)
 
-class Transpose(nn.Module):
-    def __init__(self):
-        super(Transpose, self).__init__()
 
-    def forward(self, x):
-        return torch.transpose(x, -1, -2)
 
 def get_free_gpu():
     os.system('nvidia-smi -q -d Memory |grep -A4 GPU|grep Free > ./tmp')
