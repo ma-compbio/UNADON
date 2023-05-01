@@ -368,6 +368,7 @@ def main(conf):
     # Step 1: Process sequnece features and create the hdf5 file
     print('Processing sequence features...')
     kmer_from_anno(conf)
+    kmer_PCA(conf)
 
     # Step 2: Process the epigenomic features
     print('Processing epigenomic features...')
