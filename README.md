@@ -25,8 +25,6 @@ List of required python packages for running UNADON:
  - scikit-learn=0.24.2
  - scipy=1.7.2
  - torch=1.12.1
- - torch-optimizer=0.3.0
- - torchvision=0.13.0
  - xgboost=1.5.0
 
 
