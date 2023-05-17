@@ -2,28 +2,22 @@ import numpy as np
 import math
 import json
 import torch
-import torchvision
 import torch.nn as nn
 import torch.nn.functional as F
-import torch.optim as optim
 from torch.utils.data import DataLoader, WeightedRandomSampler
-# from tensorflow.keras.utils import to_categorical as to_categorical_cpu
 import time
 import scipy
 import os
 from utils import *
-from seq_feat_model import *
-# from utils import *
 import captum
 # from captum.attr import LayerConductance, LayerActivation, LayerIntegratedGradients, Saliency
 # from captum.attr import IntegratedGradients, DeepLift, GradientShap, NoiseTunnel, FeatureAblation
 from captum.attr import IntegratedGradients
-
 import scipy
 import seaborn as sns
 from transformer_with_attn import TransformerEncoderLayer, TransformerEncoder
-from UNADON_model import PrepNet
-from seq_feat_model import DomainClassifier
+from UNADON_model import PrepNet, DomainClassifier
+
 
 
 

@@ -269,7 +269,7 @@ class RelativePartialMultiHeadAttention(MultiHeadAttention):
 
         # [qlen x klen x bsz x n_head]
         attn_score = AC + BD
-        attn_score.mul_(self.scale)
+        # attn_score.mul_(self.scale)
         return attn_score
 
     def _rel_shift(self, x, zero_triu=False):

@@ -3,7 +3,6 @@ import numpy as np
 import copy
 import json
 import h5py
-import pybedtools
 from sklearn.metrics import r2_score, explained_variance_score, mean_squared_error
 from torch.utils.data import Dataset
 from torch import from_numpy
@@ -35,7 +34,8 @@ class SeqData(Dataset):
         
 
     def get_sample_weight(self):
-        # can adjust the weight of the training cell types here
+        # Can adjust the weight of the training cell types here. 
+        # Assume that the model is trained on three cell types for the cross-cell-type setting
         return [1] * int(len(self.X) * 2 / 3) + [1] * int(len(self.X) / 3)
         
     

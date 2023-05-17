@@ -3,7 +3,6 @@ from attn import *
 
 import numpy as np
 import torch
-import torchvision
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
@@ -44,7 +43,7 @@ class DomainClassifier(nn.Module):
         self.layers = nn.ModuleList()
         self.layers.append(nn.Linear(input_dim, 50))
         self.layers.append(nn.Linear(50, 50))
-        self.layers.append(nn.Linear(50, 4))
+        self.layers.append(nn.Linear(50, 3))
 
 
     def forward(self,x):
@@ -71,7 +70,6 @@ class PrepNet(nn.Module):
     def __init__(self, input_dim, hidden_dim, num_layers, dropout):
         
         super().__init__()
-        dropout = 0.5
         self.layers = nn.ModuleList()
         self.layers.append(nn.Linear(input_dim, hidden_dim))
         self.layers.append(Transpose())
@@ -149,8 +147,11 @@ class UNADON(nn.Module):
         self.FC1 = nn.Linear(2 * dense_dim, 16)
 
         self.encoder_layer =  TransformerEncoderLayer(d_model = 2 * dense_dim, nhead=nhead,\
-            dim_feedforward = attn_hidden_dim, batch_first = True, dropout = dropout,\
+            dim_feedforward = attn_hidden_dim, dropout = dropout,\
             activation = 'relu')
+        # The RelativePartialMultiHeadAttention module assumes that the shape
+        # of the input is (seq, batch, feat). Removed batch_first argument to avoid confusion
+
         self.transformer = TransformerEncoder(self.encoder_layer, attn_num_layers)
         
         self.output = nn.Linear(16, 1)

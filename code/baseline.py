@@ -2,7 +2,6 @@ import numpy as np
 from utils import *
 import matplotlib.pyplot as plt
 import torch
-import torchvision
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim

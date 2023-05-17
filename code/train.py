@@ -51,7 +51,8 @@ def train(conf):
                               pin_memory=True,
                               num_workers = 2,
                               # shuffle = True,
-                              sampler = sampler)
+                              sampler = sampler
+                              )
 
     loader_valid = DataLoader(dataset = dts_valid, 
                               batch_size = conf['batch'] ,
@@ -78,7 +79,7 @@ def train(conf):
     # Step 2: Prepare the model
     model = UNADON(input_dim, 20, conf['dense_dim'], conf['dense_num_layers'],\
     conf['nhead'],  conf['attn_hidden_dim'], conf['attn_layers'], conf["dropout"])
-
+    # assume that the dimension of the sequence features is 20.
 
     model.to(device)
     conf['device'] = device
