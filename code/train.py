@@ -90,7 +90,7 @@ def train(conf):
     # Step 3: Define loss function and optimizer
     loss_func = nn.MSELoss()
     domain_loss_func = nn.CrossEntropyLoss() # For cross-cell-type only
-    optimizer = optim.AdamW(model.parameters(),lr = conf['base_lr'], weight_decay = conf['base_lr'], betas = (0.9,0.98))
+    optimizer = optim.AdamW(model.parameters(),lr = conf['base_lr'], weight_decay = conf['reg'], betas = (0.9,0.98))
     warmup_steps = 3000
     scheduler = optim.lr_scheduler.LambdaLR(optimizer, \
         lambda step: min((step+1)**(-0.5), (step+1)*(warmup_steps) ** (-1.5)))
